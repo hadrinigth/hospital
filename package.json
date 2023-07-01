@@ -1,0 +1,32 @@
+{
+  "name": "hospital",
+  "version": "1.0.0",
+  "description": "projeto utilizando node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hadrinigth/hospital.git"
+  },
+  "author": "Hadriney",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hadrinigth/hospital/issues"
+  },
+  "homepage": "https://github.com/hadrinigth/hospital#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.3.1",
+    "mustache": "^4.2.0",
+    "validator": "^13.9.0"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.17",
+    "@types/mongoose": "^5.11.97",
+    "@types/mustache-express": "^1.2.2"
+  }
+}
