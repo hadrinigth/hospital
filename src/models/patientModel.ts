@@ -25,28 +25,32 @@ type PatientType = {
 	uti: boolean;
 };
 
-const schema = new Schema<PatientType>({
-	infos: {
-		name: String,
-		age: Number,
-		sus: String,
-		entry: Date,
-	},
-	symptoms: {
-		diabetes: Boolean,
-		pressure: {
-			type: String,
-			enum: ['alta', 'baixa', 'normal'],
+const schema = new Schema<PatientType>(
+	{
+		infos: {
+			name: String,
+			age: Number,
+			sus: String,
+			entry: Date,
 		},
-		allergies: [String],
+		symptoms: {
+			diabetes: Boolean,
+			pressure: {
+				type: String,
+				enum: ['alta', 'baixa', 'normal'],
+			},
+			allergies: [String],
+		},
+		diagnosis: {
+			dengue: Boolean,
+			COVID: Boolean,
+			lombriga: Boolean,
+		},
+		uti: Boolean,
 	},
-	diagnosis: {
-		dengue: Boolean,
-		COVID: Boolean,
-		lombriga: Boolean,
-	},
-	uti: Boolean,
-});
+
+	{ collection: 'patient' }
+);
 
 const modelName: string = 'Patient';
 export default connection && connection.models[modelName]
