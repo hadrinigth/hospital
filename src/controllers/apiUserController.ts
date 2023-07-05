@@ -38,3 +38,27 @@ export const createPatient = async (req: Request, res: Response) => {
 		});
 	}
 };
+
+export const updatePatient = async (req: Request, res: Response) => {
+	const { id } = req.params;
+	const updatePatientData = req.body;
+
+	try {
+		const updatePatient = await patientModel.findByIdAndUpdate(
+			id,
+			updatePatientData,
+			{
+				runValidators: true,
+				new: true,
+			}
+		);
+
+		if (!updatePatient) {
+			return res.status(404).json({ error: 'Paciente Não encontrado' });
+		}
+		return res.json({ updatePatient });
+	} catch (err) {
+		console.log('erro ao encontra pacientes', err);
+		res.status(500).json({ error: 'Error Interno' });
+	}
+};

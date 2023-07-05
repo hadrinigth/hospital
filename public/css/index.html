@@ -5,45 +5,70 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Document</title>
 </head>
 
 <body>
-    <header>
-        <nav>
+    <header class="header">
+        <nav class="header__nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="register.html">Cadastro</a></li>
                 <li><a href="login.html">Login</a></li>
-                <li><a href="patients.html">Login</a></li>
-                <li><a href="profile.html">perfil</a></li>
+                <li><a href="patients.html">Pacientes</a></li>
+                <!-- nesta parte sera add func so de atendente -->
+                <li><a href="/agendamentos">Agendamentos</a></li>
             </ul>
         </nav>
+        <h2 class="header__logo">hospitalDev</h2>
     </header>
-    <main>
-        <section id="areaUsuarios">
-            <!-- Dados dos usuários -->
-
-            <div class="userCard">
-                <h3>Nome Completo</h3>
-                <p>Idade: XX</p>
-                <p>Altura: XX cm</p>
-                <p>Peso: XX kg</p>
-                <p>Histórico de Doença: XXXX</p>
+    <main class="main">
+        <h2 class="main__title">Pacientes no registro</h2>
+        <!-- Dados dos usuários -->
+        <section class="user-area">
+            <div class="user-card">
+                <h3 class="user-card__name">Nome Completo</h3>
+                <p class="user-card__info">Idade: XX</p>
+                <p class="user-card__info">Data de Nascimento: XX</p>
+                <p class="user-card__info">Número do SUS: XX</p>
+                <p class="user-card__info">Histórico de Doença: XXXX</p>
             </div>
 
-            <div class="userCard">
+            <div class="user-card">
                 <!-- Dados do segundo usuário -->
             </div>
 
             <!-- Repita as divs para cada usuário -->
-
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2023 Site com aspectos hierárquicos</p>
+    <footer class="footer">
+        <ul class="social-icons">
+            <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>
+        </ul>
+        <div class="footer__bottom">
+            <div class="footer__bottom-column">
+                <h3 class="footer__bottom-heading">Sobre Nós</h3>
+                <p class="footer__bottom-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu justo
+                    quis
+                    nisi tempus ultrices vel non turpis.</p>
+            </div>
+            <div class="footer__bottom-column">
+                <h3 class="footer__bottom-heading">Contato</h3>
+                <p class="footer__bottom-text">Telefone: (123) 456-7890</p>
+                <p class="footer__bottom-text">Email: contato@hospitaldev.com</p>
+            </div>
+            <div class="footer__bottom-column">
+                <h3 class="footer__bottom-heading">Endereço</h3>
+                <p class="footer__bottom-text">123 Rua Principal</p>
+                <p class="footer__bottom-text">Cidade, Estado</p>
+            </div>
+        </div>
     </footer>
+
+
 </body>
 
 </html>
