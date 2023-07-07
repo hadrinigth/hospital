@@ -6,7 +6,7 @@ type PatientType = {
 	infos: {
 		name: string;
 		age: number;
-		sus: number;
+		numSus: number;
 		entry: Date;
 	};
 	symptoms: {
@@ -30,7 +30,9 @@ const schema = new Schema<PatientType>(
 		infos: {
 			name: String,
 			age: Number,
-			sus: String,
+			numSus: String,
+			unique: true,
+			required: true,
 			entry: Date,
 		},
 		symptoms: {
