@@ -5,8 +5,8 @@ mongoConnect();
 type PatientType = {
 	infos: {
 		name: string;
-		age: number;
-		numSus: number;
+		dateBirth: string;
+		numSus: string;
 		entry: Date;
 	};
 	symptoms: {
@@ -28,31 +28,29 @@ type PatientType = {
 const schema = new Schema<PatientType>(
 	{
 		infos: {
-			name: String,
-			age: Number,
-			numSus: String,
-			unique: true,
-			required: true,
-			entry: Date,
+			name: { type: String, required: true },
+			dateBirth: { type: String, required: true },
+			numSus: { type: String, required: true, unique: true },
+			entry: { type: Date },
 		},
 		symptoms: {
-			diabetes: Boolean,
+			diabetes: { type: Boolean },
 			pressure: {
 				type: String,
 				enum: ['alta', 'baixa', 'normal'],
 			},
-			allergies: [String],
+			allergies: [{ type: String }],
 		},
 		diagnosis: {
-			dengue: Boolean,
-			COVID: Boolean,
-			lombriga: Boolean,
+			dengue: { type: Boolean },
+			COVID: { type: Boolean },
+			lombriga: { type: Boolean },
 		},
-		uti: Boolean,
+		uti: { type: Boolean },
 	},
-
 	{ collection: 'patient' }
 );
+
 
 const modelName: string = 'Patient';
 export default connection && connection.models[modelName]

@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import * as pageRenderController from '../controllers/pageRenderController';
+import * as pageRenderController from '../controllers/viewController/pageRenderController';
 
 const router = Router();
 

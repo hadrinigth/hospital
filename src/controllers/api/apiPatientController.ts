@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import patientModel from '../models/patientModel';
+import patientModel from '../../models/patientModel';
 
 export const ping = async (req: Request, res: Response) => {
 	res.json({ pong: true }); // teste

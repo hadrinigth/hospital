@@ -1,15 +1,17 @@
 import { Request, Response } from 'express';
-import patientModel from '../models/patientModel';
+import Patient from '../../models/patientModel';
 
 export const home = async (req: Request, res: Response) => {
-	try {
-		const patients = await patientModel.find({});
-		res.render('pages/home', { patients });
-		console.log(patients);
+    try {
+		const allPatients = await Patient.find({});
+		console.log(allPatients);
+		res.render("pages/home", {  allPatients });
 	} catch (error) {
 		console.error(error);
-		res.status(500).json({ error: 'Internal Server Error' });
+		res.status(500).json({ error: "Internal Server Error" });
 	}
+
+
 };
 
 export const login = (req: Request, res: Response) => {
