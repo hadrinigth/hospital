@@ -7,8 +7,8 @@ const router = Router();
 
 router.get('/api/patient/ping', apiUserController.ping);
 router.post('/api/patient', apiUserController.createPatient); //criar paciente
-router.put('/api/patientUp/:numSus', apiUserController.updatePatient); //atualizar pacientes //TODO  Func funcionado corretamento mais nao sei como emblementa no site ainda
-router.delete('/api/patientRe/:numSus', apiUserController.removePatient);
+router.put('/api/patient/:numSus', apiUserController.updatePatient); //atualizar pacientes //TODO  Func funcionado corretamento mais nao sei como emblementa no site ainda
+router.delete('/api/patient/:numSus', apiUserController.removePatient);
 
 //   api
 //      do
