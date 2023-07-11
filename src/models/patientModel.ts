@@ -5,6 +5,8 @@ mongoConnect();
 type PatientType = {
 	infos: {
 		name: string;
+		email: string;
+		password: string;
 		dateBirth: string;
 		numSus: string;
 		entry: Date;
@@ -13,7 +15,7 @@ type PatientType = {
 		diabetes: boolean;
 		pressure: {
 			type: string;
-			enum: ['alta', 'baixa', 'normal'];
+			enum: ["alta", "baixa", "normal"];
 		};
 		allergies: [string];
 	};
@@ -29,6 +31,8 @@ const schema = new Schema<PatientType>(
 	{
 		infos: {
 			name: { type: String, required: true },
+			email: { type: String, required: true },
+			password: { type: String, required: true },
 			dateBirth: { type: String, required: true },
 			numSus: { type: String, required: true, unique: true },
 			entry: { type: Date },
@@ -37,7 +41,7 @@ const schema = new Schema<PatientType>(
 			diabetes: { type: Boolean },
 			pressure: {
 				type: String,
-				enum: ['alta', 'baixa', 'normal'],
+				enum: ["alta", "baixa", "normal"],
 			},
 			allergies: [{ type: String }],
 		},
@@ -48,7 +52,7 @@ const schema = new Schema<PatientType>(
 		},
 		uti: { type: Boolean },
 	},
-	{ collection: 'patient' }
+	{ collection: "patient" }
 );
 
 

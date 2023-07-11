@@ -4,7 +4,7 @@ import * as pageRenderController from '../controllers/viewController/pageRenderC
 const router = Router();
 
 router.get('/', pageRenderController.home);
-router.get('/register', pageRenderController.register);
+router.get('/registerPat', pageRenderController.register);
 router.get('/profile', pageRenderController.profile);
 router.get('/login', pageRenderController.login);
 

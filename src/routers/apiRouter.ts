@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import * as apiUserController from '../controllers/api/apiPatientController';
 import * as apiAtendantController from '../controllers/api/apiAtendantController'
+import { privateRoute } from '../config/passport';
 
 const router = Router();
 
@@ -13,10 +14,10 @@ router.delete('/api/patientRe/:numSus', apiUserController.removePatient);
 //      do
 //        atendant
 
-router.get('/api/attendent/ping', apiAtendantController.ping);
-router.post('/api/attendent/new', apiAtendantController.createAttendent);
-router.put('/api/attendent/edit/:email', apiAtendantController.updateAttendent );
-router.delete('/api/attendent/remove', apiUserController.removePatient);
+router.get('/api/attendent', privateRoute, apiAtendantController.ping);
+router.post('/api/attendent', apiAtendantController.createAttendent);
+router.put('/api/attendent/:email', apiAtendantController.updateAttendent );
+router.delete('/api/attendent', apiUserController.removePatient);
 
 
 
